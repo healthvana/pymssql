@@ -41,7 +41,7 @@ if have_c_files:
 else:
     # Force `setup_requires` stuff like Cython to be installed before proceeding
     from setuptools.dist import Distribution
-    Distribution(dict(setup_requires='Cython>=0.29.22,<1'))
+    Distribution(dict(setup_requires='Cython==0.29.36'))
     from Cython.Distutils import build_ext as _build_ext
 
 def check_env(env_name, default):
@@ -324,7 +324,7 @@ setup(
       "Operating System :: Unix",
     ],
     zip_safe = False,
-    setup_requires=['setuptools_scm', 'Cython>=0.29.22,<1'],
+    setup_requires=['setuptools_scm', 'Cython==0.29.36'],
     tests_require=['psutil', 'pytest', 'pytest-timeout'],
     ext_modules = ext_modules(),
     packages = [ 'pymssql'],
